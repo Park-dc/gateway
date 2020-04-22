@@ -7,30 +7,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: reservation
+        - id: order_manage
           uri: http://localhost:8081
           predicates:
-            - Path=/reservations/**
-#        - id: notice
-#          uri: http://localhost:8082
-#          predicates:
-#            - Path=//**
-        - id: diagnosis
-          uri: http://localhost:8083
-          predicates:
-            - Path=/medicalRecords/**
-        - id: lookup
-          uri: http://localhost:8084
-          predicates:
-            - Path=/reservationStats/**
-        - id: acceptance
-          uri: http://localhost:8085
-          predicates:
-            - Path=/financialManagements/**
-        - id: oauth
-          uri: http://localhost:8090
-          predicates:
-            - Path=/oauth/**
+            - Path=/orders/** 
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -49,30 +29,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: reservation
-          uri: http://reservation:8080
+        - id: order_manage
+          uri: http://order_manage:8080
           predicates:
-            - Path=/reservations/**
-#        - id: notice
-#          uri: http://notice:8080
-#          predicates:
-#            - Path=/order/**
-        - id: diagnosis
-          uri: http://diagnosis:8080
-          predicates:
-            - Path=/medicalRecords/**
-        - id: lookup
-          uri: http://lookup:8080
-          predicates:
-            - Path=/reservationStats/**
-        - id: acceptance
-          uri: http://acceptance:8080
-          predicates:
-            - Path=/financialManagements/**
-        - id: oauth
-          uri: http://oauth:8080
-          predicates:
-            - Path=/oauth/**
+            - Path=/orders/** 
       globalcors:
         corsConfigurations:
           '[/**]':
