@@ -23,6 +23,14 @@ spring:
           uri: http://localhost:8085/totalViews
           predicates:
             - Path=/totalview/**  
+        - id: inventory
+          uri: http://localhost:8084/inventories
+          predicates:
+            - Path=/inventories/**  
+        - id: inventory
+          uri: http://localhost:8084/inventoryCheck
+          predicates:
+            - Path=/inventoryCheck/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -56,7 +64,15 @@ spring:
         - id: totalview
           uri: http://totalview:8080/totalViews
           predicates:
-            - Path=/totalView/**             
+            - Path=/totalView/**  
+        - id: inventory
+          uri: http://inventory:8080/inventories
+          predicates:
+            - Path=/inventories/**  
+        - id: inventory
+          uri: http://inventory:8080/inventoryCheck
+          predicates:
+            - Path=/inventoryCheck/**           
       globalcors:
         corsConfigurations:
           '[/**]':
