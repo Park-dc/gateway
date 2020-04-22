@@ -7,8 +7,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ordermanage
-          uri: http://localhost:8081
+        - id: rentalRequest
+          uri: http://localhost:8081/rentalRequest
+          predicates:
+            - Path=/rentalRequest/** 
+        - id: orderms
+          uri: http://localhost:8081/orders
           predicates:
             - Path=/orders/** 
       globalcors:
@@ -29,8 +33,12 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: ordermanage
-          uri: http://ordermanage:8080
+        - id: rentalRequest
+          uri: http://orders:8080/rentalRequest
+          predicates:
+            - Path=/rentalRequest/** 
+        - id: orderms
+          uri: http://orders:8080/orders
           predicates:
             - Path=/orders/** 
       globalcors:
