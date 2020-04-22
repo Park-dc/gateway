@@ -7,7 +7,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: rentalRequest
+        - id: rentalrequest
           uri: http://localhost:8081/rentalRequest
           predicates:
             - Path=/rentalRequest/** 
@@ -15,6 +15,14 @@ spring:
           uri: http://localhost:8081/orders
           predicates:
             - Path=/orders/** 
+        - id: rentalcancel
+          uri: http://localhost:8081/rentalCancel
+          predicates:
+            - Path=/rentalCancel/** 
+        - id: totalview
+          uri: http://localhost:8085/totalViews
+          predicates:
+            - Path=/totalview/**  
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -33,14 +41,22 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: rentalRequest
-          uri: http://orders:8080/rentalRequest
+        - id: rentalrequest
+          uri: http://order:8080/rentalRequest
           predicates:
             - Path=/rentalRequest/** 
         - id: orderms
-          uri: http://orders:8080/orders
+          uri: http://ordermanager:8080/orders
           predicates:
             - Path=/orders/** 
+        - id: rentalcancel
+          uri: http://order:8080/rentalCancel
+          predicates:
+            - Path=/rentalCancel/** 
+        - id: totalview
+          uri: http://totalview:8080/totalViews
+          predicates:
+            - Path=/totalView/**             
       globalcors:
         corsConfigurations:
           '[/**]':
