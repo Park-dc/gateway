@@ -50,7 +50,7 @@ spring:
     gateway:
       routes:
         - id: rentalrequest
-          uri: http://order:8080/rentalRequest
+          uri: http://ordermanager:8080/rentalRequest
           predicates:
             - Path=/rentalRequest/** 
         - id: orderms
@@ -58,7 +58,7 @@ spring:
           predicates:
             - Path=/orders/** 
         - id: rentalcancel
-          uri: http://order:8080/rentalCancel
+          uri: http://ordermanager:8080/rentalCancel
           predicates:
             - Path=/rentalCancel/** 
         - id: totalview
@@ -66,11 +66,11 @@ spring:
           predicates:
             - Path=/totalView/**  
         - id: inventory
-          uri: http://inventory:8080/inventories
+          uri: http://inventorymanager:8080/inventories
           predicates:
             - Path=/inventories/**  
         - id: inventory
-          uri: http://inventory:8080/inventoryCheck
+          uri: http://inventorymanager:8080/inventoryCheck
           predicates:
             - Path=/inventoryCheck/**           
       globalcors:
