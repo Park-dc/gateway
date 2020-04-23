@@ -62,11 +62,11 @@ spring:
           predicates:
             - Path=/rentalCancel/** 
         - id: totalview
-          uri: http://totalview:8080/totalViews
+          uri: http://totalview:8080
           predicates:
             - Path=/totalView/**  
         - id: inventory
-          uri: http://inventorymanager:8080/inventories
+          uri: http://inventorymanager:8080
           predicates:
             - Path=/inventories/**  
         - id: inventory
