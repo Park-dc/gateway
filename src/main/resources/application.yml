@@ -64,7 +64,7 @@ spring:
         - id: totalview
           uri: http://totalview:8080
           predicates:
-            - Path=/totalView/**  
+            - Path=/totalview/**  
         - id: inventory
           uri: http://inventorymanager:8080
           predicates:
